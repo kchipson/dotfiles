@@ -1,0 +1,7 @@
+[user]
+	name = kchipson
+	email = kchipson@yandex.ru
+[core]
+	editor = vim
+[init]
+	defaultBranch = master

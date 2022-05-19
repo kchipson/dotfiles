@@ -1,0 +1,11 @@
+set $mod Mod4
+
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+
+include ~/.config/i3/config.d/base.conf
+include ~/.config/i3/config.d/colors.conf
+include ~/.config/i3/config.d/bind.conf
+include ~/.config/i3/config.d/apps.conf
+include ~/.config/i3/config.d/gaps.conf
+include ~/.config/i3/config.d/startup.conf
