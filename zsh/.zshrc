@@ -103,14 +103,50 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 
 
-ranger() {
-    if [ -z "$RANGER_LEVEL" ]; then
-        /usr/bin/ranger "$@"
-    else
-        exit
+rr() {
+    if [ -n "$RANGER_LEVEL" ]; then exit
     fi
+    if [ "$1" != "" ]; then
+        if [ -d "$1" ]; then
+            ranger "$1"
+        else
+            ranger "$(zoxide query $1)"
+        fi
+    else
+        ranger
+    fi
+    return $?
 }
 
+r() {
+    if [ -n "$RANGER_LEVEL" ]; then exit
+    fi
+    temp_file="$(mktemp -t "ranger_cd.XXXXXXXXXX")"
+    if [ "$1" != "" ]; then
+        if [ -d "$1" ]; then
+            ranger --choosedir="$temp_file" -- "$1"
+        else
+            ranger --choosedir="$temp_file" -- "$(zoxide query $1)"
+        fi
+    else
+        ranger --choosedir="$temp_file" -- "${@:-$PWD}"
+    fi
+    if chosen_dir="$(cat -- "$temp_file")" && [ -n "$chosen_dir" ] && [ "$chosen_dir" != "$PWD" ]; then
+        cd -- "$chosen_dir"
+    fi
+    rm -f -- "$temp_file" > /dev/null
+    return $?
+}
+
+
 # Key-bindings
-bindkey -s '^ ' 'ranger^M'
+# bindkey -s '^@' 'ranger^M'
+
+eval "$(zoxide init zsh)"
+
+export TERMINAL=alacritty
+
+# for ranger
+export VISUAL=vim
+export PAGER=more
 

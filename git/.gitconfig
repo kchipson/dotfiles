@@ -5,3 +5,18 @@
 	editor = vim
 [init]
 	defaultBranch = master
+[alias]
+	co = checkout
+	l = " log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%an>%Creset' --date=format:'%y-%m-%d %H:%M:%S'"
+	a = add
+	aa = "add --all"
+	b = branch
+	ba = "branch -a"
+	bdel = "branch -d"
+	bDEL = "branch -D"
+	c = "commit -v"
+	cam = "commit -a -m"
+	co = checkout
+	conf = "config --list"
+	s = status
+	d = diff
