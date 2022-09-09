@@ -150,3 +150,6 @@ export TERMINAL=alacritty
 export VISUAL=vim
 export PAGER=more
 
+export PATH=~/bin:~/.local/bin:$PATH
+
+
