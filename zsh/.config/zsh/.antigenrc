@@ -1,0 +1,27 @@
+
+# antigen use oh-my-zsh
+
+# antigen bundle [<url>[@tag|branch] [<loc>]]
+
+# +---------+
+# | Плагины |
+# +---------+
+
+# antigen bundle kennethreitz/autoenv # Мб пигодится
+
+# Syntax highlighting bundle.
+antigen bundle zsh-users/zsh-syntax-highlighting 
+# Fish-like auto suggestions
+antigen bundle zsh-users/zsh-autosuggestions
+
+# antigen bundle marlonrichert/zsh-autocomplete@main # Сильно нагружает, плохо взаимодействует с остальными
+
+
+# +------+
+# | Темы |
+# -------+
+antigen theme robbyrussell # Зависим от oh-my-szh
+# antigen theme agnoster/agnoster-zsh-theme
+antigen theme romkatv/powerlevel10k
+# Tell Antigen that you're done.
+antigen apply

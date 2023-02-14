@@ -1,3 +1,7 @@
+# Ссаный antigen
+*.zwc
+
+
 
 ### Python ###
 # Byte-compiled / optimized / DLL files

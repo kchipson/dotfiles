@@ -1,0 +1,124 @@
+#!/usr/bin/env bash
+
+# +--------+
+# | System |
+# +--------+
+alias shutdown='sudo shutdown now'
+alias restart='sudo reboot'
+
+alias please='sudo $(fc -nl -1)' # Repeat last command with sudo
+
+
+# +-----+
+# | X11 |
+# +-----+
+alias xpropc='xprop | grep WM_CLASS' # display xprop class
+
+
+# +-----+
+# | Zsh |
+# +-----+
+if which zsh &> /dev/null; then
+    alias d='dirs -v'
+
+    alias d-='cd -'
+    for index ({1..9}) alias "d$index"="cd -${index}"; unset index # directory stack
+
+    alias -g ...='../..'
+    alias -g ....='../../..'
+    alias -g .....='../../../..'
+    alias -g ......='../../../../..'
+    alias -g G='| grep'
+    alias -g L="| less"
+
+    # alias -s tex=vim
+    # alias -s html=w3m
+    # alias -s org=w3m
+fi
+
+
+# +----+
+# | ls |
+# +----+
+alias ls='ls --color=auto'
+alias l='ls -lhF'
+alias ll='ls -lAhF'
+alias lh='ls -lAd .*'
+
+
+# +-----+
+# | dir |
+# +-----+
+
+alias md='mkdir -pv'
+alias rd=rmdir
+
+
+# +----------+
+# | cp,mb,rm |
+# +----------+
+alias cp='cp -iv'
+alias mv='mv -iv'
+alias rm='rm -iv'
+
+
+# +------+
+# | grep |
+# +------+
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
+
+# +-------+
+# | fonts |
+# +-------+
+alias fonts='fc-cache -f -v'
+
+
+# +-----+
+# | Git |
+# +-----+
+alias g='git'
+alias gs='git status'
+alias gss='git status -s'
+alias ga='git add'
+alias gaa='git add --all'
+alias gb='git branch'
+alias gbr='git branch -r' 
+alias gba='git branch -a'
+alias gbdel='git branch -d'
+alias gbDEL='git branch -D'
+alias gc='git commit -v'
+alias gc!='git commit -v --amend'
+alias gcn!='git commit -v --no-edit --amend'
+alias gca='git commit -v -a'
+alias gca!='git commit -v -a --amend'
+alias gcan!='git commit -v -a --no-edit --amend'
+alias gcam='git commit -a -m'
+alias gco='git checkout'
+alias gconf='git config --list'
+alias gd='git diff'
+alias gl="git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%an>%Creset' --date=format:'%y-%m-%d %H:%M:%S'"
+
+
+# +--------+
+# | docker |
+# +--------+
+alias doc='docker'
+alias docRemAll='docker rm $(docker ps -a -q) && docker rmi $(docker images -q)'   # delete every containers / images
+alias docstats='docker stats $(docker ps -q)'                                  # stats on images
+alias docimg='docker images'                                                   # list images installed
+alias docprune='docker system prune -a'                                        # prune everything
+
+
+# +----------------+
+# | docker-compose |
+# +----------------+
+alias docce='docker-compose'
+alias docce-dev='docker-compose -f docker-compose-dev.yml' # run a different config file than the default one
+
+
+# +----------+
+# | Personal |
+# +----------+
