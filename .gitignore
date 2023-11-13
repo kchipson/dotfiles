@@ -1,7 +1,5 @@
-# Ссаный antigen
-*.zwc
-
-
+zsh/.config/zsh/.p10k.zsh
+zsh/.config/zsh/antigen.zsh
 
 ### Python ###
 # Byte-compiled / optimized / DLL files

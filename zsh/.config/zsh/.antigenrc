@@ -20,7 +20,7 @@ antigen bundle zsh-users/zsh-autosuggestions
 # +------+
 # | Темы |
 # -------+
-antigen theme robbyrussell # Зависим от oh-my-szh
+# antigen theme robbyrussell # Зависим от oh-my-szh
 # antigen theme agnoster/agnoster-zsh-theme
 antigen theme romkatv/powerlevel10k
 # Tell Antigen that you're done.
