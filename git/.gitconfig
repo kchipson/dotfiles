@@ -7,7 +7,7 @@
 	defaultBranch = master
 [alias]
 	co = checkout
-	l = " log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%an>%Creset' --date=format:'%y-%m-%d %H:%M:%S'"
+	l = "log --all --decorate --oneline --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%an>%Creset' --date=format:'%y-%m-%d %H:%M:%S'"
 	a = add
 	aa = "add --all"
 	b = branch
